@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>崔杨 · 产品经理（应届生）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { background: #eceef1; }
+
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Arial, sans-serif;
+    color: #333333;
+    font-size: 10pt;
+    line-height: 15pt;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ---------- A4 纸张（210mm x 297mm，四边 2cm 边距） ---------- */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 2cm;
+    margin: 24px 0;
+    background: #ffffff;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, .10);
+  }
+
+  /* ---------- 顶部个人信息 ---------- */
+  .header { width: 100%; }
+  .header td { vertical-align: middle; }
+
+  .name {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #1f2b38;
+    letter-spacing: 4px;
+    line-height: 26pt;
+  }
+  .intent {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #2A5C82;
+    letter-spacing: 1px;
+    line-height: 15.5pt;
+    margin-top: 1px;
+  }
+  .contact {
+    font-size: 10pt;
+    color: #444444;
+    line-height: 15pt;
+    margin-top: 5px;
+  }
+  .contact .sep { color: #c4ccd4; padding: 0 6px; }
+  .portfolio {
+    font-size: 9.5pt;
+    color: #444444;
+    line-height: 14pt;
+    margin-top: 6px;
+  }
+  /* 每行一条作品：标签 + 深蓝下划线链接 + 灰色小字说明 */
+  .pf-item {
+    display: block;
+    margin: 1px 0 0;
+    padding-left: 4.6em;
+    text-indent: -4.6em;
+  }
+  .pf-item:first-child { margin-top: 0; }
+  .pf-item .pf-label {
+    color: #555c64;
+    font-weight: 600;
+  }
+  .pf-link {
+    color: #2b579a;
+    text-decoration: underline;
+    text-underline-offset: 1.5px;
+    word-break: break-all;
+  }
+  .pf-link:hover { color: #1a3a6b; }
+  .pf-note {
+    font-size: 0.9em;
+    color: #666666;
+    font-weight: 400;
+  }
+  @media print {
+    .pf-link { color: #2b579a; }
+  }
+
+  .photo-cell { width: 88px; text-align: right; padding-left: 16px; }
+  .photo { width: 82px; display: inline-block; border: 1px solid #e2e6ea; }
+
+  hr.divider { border: none; border-top: 1px solid #e6e9ec; margin: 5px 0 0; }
+
+  /* ---------- 板块标题（14pt 主色，仅此一处用色） ---------- */
+  .section-title {
+    font-size: 14pt;
+    font-weight: 700;
+    color: #2A5C82;
+    letter-spacing: 3px;
+    line-height: 21pt;
+    padding-bottom: 3px;
+    border-bottom: 1.5px solid #2A5C82;
+    margin: 5px 0 3px;
+  }
+
+  /* ---------- 通用文本 ---------- */
+  p { font-size: 10pt; color: #333333; line-height: 15pt; }
+  .strong { font-weight: 700; color: #1f2b38; }
+  .accent { color: #2A5C82; font-weight: 600; }
+  .label { color: #7a828b; }
+
+  /* ---------- 行式布局：左标题 + 右时间/数据 ---------- */
+  .row { width: 100%; border-collapse: collapse; margin-top: 1px; }
+  .row td { vertical-align: baseline; padding: 0; }
+  .row .left { font-size: 10.5pt; color: #1f2b38; line-height: 15.5pt; }
+  .row .left .org, .row .left .title { font-weight: 700; }
+  .row .left .major { font-weight: 600; }
+  .row .right { font-size: 10pt; color: #7a828b; text-align: right; white-space: nowrap; line-height: 15.5pt; }
+
+  .meta-line { font-size: 10pt; color: #444444; line-height: 15pt; margin-top: 2px; }
+
+  /* ---------- 圆点列表 ---------- */
+  ul.list { list-style: none; margin: 2px 0 0; }
+  ul.list li {
+    position: relative;
+    padding-left: 13px;
+    margin: 1px 0;
+    font-size: 10pt;
+    line-height: 15pt;
+    color: #333333;
+  }
+  ul.list li::before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 7px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #2A5C82;
+  }
+  ul.list li .tag { font-weight: 700; color: #2A5C82; }
+  ul.list li b { font-weight: 700; color: #1f2b38; }
+
+  /* ---------- 打印：严格 A4，四边 2cm，无溢出 ---------- */
+  @media print {
+    html, body { background: #ffffff; display: block; }
+    .page { margin: 0; padding: 0; width: auto; min-height: auto; box-shadow: none; }
+    @page { size: A4; margin: 2cm; }
+    .section-title, ul.list li { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ==================== 个人信息（联系方式一行，| 分隔） ==================== -->
+  <table class="header">
+    <tr>
+      <td style="width:82%;">
+        <div class="name">崔杨</div>
+        <div class="intent">求职意向：产品经理（2028 届应届生）</div>
+        <div class="contact">
+          13844656918<span class="sep">|</span>mhyz_0812@qq.com<span class="sep">|</span>南京市
+        </div>
+        <div class="portfolio">
+          <div class="pf-item">
+            <span class="pf-label">个人作品集：</span><a class="pf-link" href="https://cuiyang-pm.github.io/my-portfolio/" target="_blank" rel="noopener noreferrer">https://cuiyang-pm.github.io/my-portfolio/</a><span class="pf-note">（含多模态饮食决策、校园二手交易、VR安全培训等产品原型与PRD）</span>
+          </div>
+          <div class="pf-item">
+            <span class="pf-label">AI看板直达：</span><a class="pf-link" href="https://cuiyang-pm.github.io/AI-/" target="_blank" rel="noopener noreferrer">https://cuiyang-pm.github.io/AI-/</a>
+          </div>
+        </div>
+      </td>
+      <td class="photo-cell" style="width:18%;">
+        &#8203;<img class="photo" src="photo_1inch.jpg" alt="证件照" width="82">
+      </td>
+    </tr>
+  </table>
+
+  <hr class="divider">
+
+  <!-- ==================== 个人概述 ==================== -->
+  <div class="section-title">个人概述</div>
+  <p>计算机专业出身，能写 SQL、看前端排障，与研发沟通零摩擦。有 0-1 产品落地与数据驱动迭代的完整闭环经验，能独立扛住需求洞察、方案设计与跨部门推动。求职方向：产品经理。</p>
+
+  <!-- ==================== 教育背景（GPA 与排名右对齐） ==================== -->
+  <div class="section-title">教育背景</div>
+  <table class="row">
+    <tr>
+      <td class="left" style="width:64%;"><span class="org">南京财经大学</span>&nbsp;&nbsp;<span class="major">计算机科学与技术（本科）</span></td>
+      <td class="right" style="width:36%;">2024.09 - 2028.06</td>
+    </tr>
+  </table>
+  <div class="meta-line" style="text-align:right; margin-top:2px;">
+    GPA <span class="strong">3.97 / 5.0</span>&nbsp;&nbsp;|&nbsp;&nbsp;专业排名 <span class="strong">6 / 81</span>（前 7%）
+  </div>
+  <p style="margin-top:3px;"><span class="label">核心课程：</span>Web 技术基础、数据挖掘、软件工程、数据库系统原理、Python 及数据分析应用</p>
+
+  <!-- ==================== 项目经历（STAR：情境/任务 → 行动 → 结果） ==================== -->
+  <div class="section-title">项目经历</div>
+
+  <!-- 项目一：众食智荐 -->
+  <table class="row">
+    <tr>
+      <td class="left" style="width:68%;"><span class="title">众食智荐 —— 多模态饮食决策支持系统</span>&nbsp;&nbsp;·&nbsp;<span class="accent">产品负责人</span></td>
+      <td class="right" style="width:32%;">2025.10 - 2026.03</td>
+    </tr>
+  </table>
+  <p style="margin-top:3px;"><span class="label">项目背景与任务：</span>面向全年龄段用户的饮食推荐产品，针对“不知道吃什么”、筛选效率低的痛点，主导 0→1 落地。</p>
+  <ul class="list">
+    <li><b>需求洞察与分析</b>：通过问卷调研与深度访谈<!-- 可补充真实量级：如「问卷 120 份、深访 15 人」 -->洞察不同年龄层用户的操作差异，主导输出双模式设计规范（适老化模式 + 标准模式），提升全人群操作体验。</li>
+    <li><b>产品方案与决策</b>：围绕口味 / 食材 / 烹饪难度的多维度筛选交互，从用户体验与服务器成本双维度决策“刷新式 / 无刷新式”方案，推动异步刷新方案落地，筛选响应提速约 <b>75%</b>、高频筛选请求量下降约 <b>90%</b>。</li>
+    <li><b>项目推进与协同</b>：作为产品 Owner 明确业务逻辑与交互规则，推动推荐算法与图像识别方案按期上线。</li>
+    <li><b>数据复盘与资产沉淀</b>：中老年用户操作成功率由 <b>40%</b> 提升至 <b>80%</b>；沉淀 <b>5</b> 个通用组件库，研发效率提升约 <b>67%</b>，项目获校级比赛三等奖。</li>
+  </ul>
+
+  <!-- 项目二：校园二手交易平台"易物" -->
+  <table class="row" style="margin-top:4px;">
+    <tr>
+      <td class="left" style="width:68%;"><span class="title">校园二手交易平台“易物”</span>&nbsp;&nbsp;·&nbsp;<span class="accent">产品负责人</span></td>
+      <td class="right" style="width:32%;">2026.06 - 2026.10</td>
+    </tr>
+  </table>
+  <ul class="list">
+    <li><b>主导需求调研</b>：发放 213 份问卷、深度访谈 8 位用户，定位“交易信任缺失”“取货链路繁琐”两大痛点，输出需求清单，及完成优先级排序。</li>
+    <li><b>设计产品方案</b>：以“校园认证 + 楼栋自提”机制破解信任与履约问题，输出 Axure 原型与 PRD。</li>
+    <li><b>推动跨职能落地</b>：统筹 2 名开发与 1 名设计协同排期，2 周内完成 MVP 上线，并策划校园种子用户裂变活动。</li>
+    <li><b>复盘核心指标</b>：校园内测首月注册 1200 人、成交率 35%。</li>
+  </ul>
+
+  <!-- ==================== 专业技能（标签加粗 + 熟练度） ==================== -->
+  <div class="section-title">专业技能</div>
+  <ul class="list">
+    <li><span class="tag">产品工具：</span>Axure、Figma（精通高保真原型）、Jira（迭代管理）、Xmind（需求梳理）</li>
+    <li><span class="tag">数据工具：</span>SQL（熟练多表联查与窗口函数）、Python（pandas，掌握）、Excel（熟练）</li>
+    <li><span class="tag">研究方法：</span>用户访谈、问卷调研、A/B 测试、竞品分析（掌握）</li>
+    <li><span class="tag">技术基础：</span>熟悉 HTML / CSS / JS，了解 MySQL 与 Linux，能独立通过日志排查基础接口报错，具备与技术团队高效沟通的技术基础。</li>
+  </ul>
+
+  <!-- ==================== 竞赛与荣誉（仅保留高含金量奖项，合并精简） ==================== -->
+  <div class="section-title">竞赛与荣誉</div>
+  <ul class="list">
+    <li><span class="tag">竞赛奖项：</span>“挑战杯”创业计划竞赛【三等奖】、“正大杯”市场调查与分析大赛【三等奖】</li>
+    <li><span class="tag">奖学金：</span>国家励志奖学金 ×1，学习优秀奖学金 ×4，素质拓展奖学金 ×1</li>
+    <li><span class="tag">荣誉：</span>优秀大学生，暑期社会实践优秀个人，优秀青年志愿者</li>
+  </ul>
+
+</div>
+
+</body>
+</html>
